@@ -1,12 +1,23 @@
 
 angular.module("todoApp", [
-    "ngRoutes"
+    "ui.router"
 ])
-.config(["$routeProvider", function($routeProvider) {
+.config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $urlRouterProvider){
 
-    $routeProvider
-        .when("/", {
-            templateUrl: "",
-            controller: "mainController"
+    $urlRouterProvider.otherwise("/home");
+
+    $stateProvider
+        .state("home", {
+            url: "/home",
+            templateUrl: "partials/home.html"
         })
+        .state("login", {
+            url: "/login",
+            templateUrl: "partials/login.html"
+        })
+        .state("signup", {
+            url: "/signup",
+            templateUrl: "partials/signup.html"
+        })
+
 }])
