@@ -1,8 +1,10 @@
 
 angular.module("todoApp", [
-    "ui.router"
+    "ui.router",
+    "ngStorage"
 ])
-.config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $urlRouterProvider){
+.config(["$stateProvider", "$urlRouterProvider", "$locationProvider", 
+function($stateProvider, $urlRouterProvider, $locationProvider){
 
     $urlRouterProvider.otherwise("/home");
 
@@ -13,11 +15,15 @@ angular.module("todoApp", [
         })
         .state("login", {
             url: "/login",
-            templateUrl: "partials/login.html"
+            templateUrl: "partials/login.html",
+            controller: "loginControlller",
+            params:{obj:null}
         })
         .state("signup", {
             url: "/signup",
-            templateUrl: "partials/signup.html"
+            templateUrl: "partials/signup.html",
+            controller: "signupController",
+            params:{obj:null}
         })
 
 }])
