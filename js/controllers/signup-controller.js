@@ -9,17 +9,11 @@ angular.module("todoApp")
 
 function signupController($scope,$http, $log){
 
-
-
     $scope.user;
 
 
    $scope.signup = function(){
-       $log.log("You loggd this function");
-
-     
-
-
+ 
        if($scope.user.username && $scope.user.password){
             var data = $scope.user;
 

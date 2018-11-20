@@ -16,7 +16,7 @@ function($stateProvider, $urlRouterProvider, $locationProvider){
         .state("login", {
             url: "/login",
             templateUrl: "partials/login.html",
-            controller: "loginControlller",
+            controller: "loginController",
             params:{obj:null}
         })
         .state("signup", {
